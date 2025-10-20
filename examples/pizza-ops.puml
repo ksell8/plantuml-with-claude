@@ -1,0 +1,17 @@
+@startuml pizza-ops
+
+start
+
+:Dough;
+
+:Sauce;
+
+:Cheese;
+
+:Toppings;
+
+:Oven;
+
+stop
+
+@enduml

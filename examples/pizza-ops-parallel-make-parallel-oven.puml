@@ -1,0 +1,72 @@
+@startuml pizza-ops-parallel-make-parallel-oven
+
+|People|
+start
+
+fork
+  repeat
+    :Person 1:\nDough;
+    :Sauce;
+    :Cheese;
+    :Toppings;
+    note right: 1 minute per pizza
+
+    if (Oven has space?) then (yes)
+      fork
+        |Oven|
+        :Bake Pizza\n(15 min);
+      end fork
+    else (no)
+      |People|
+      :Wait for\noven space;
+    endif
+
+    |People|
+  repeat while (infinite pizza)
+
+fork again
+  repeat
+    :Person 2:\nDough;
+    :Sauce;
+    :Cheese;
+    :Toppings;
+
+    if (Oven has space?) then (yes)
+      fork
+        |Oven|
+        :Bake Pizza\n(15 min);
+      end fork
+    else (no)
+      |People|
+      :Wait for\noven space;
+    endif
+
+    |People|
+  repeat while (infinite pizza)
+
+fork again
+  repeat
+    :Person 3:\nDough;
+    :Sauce;
+    :Cheese;
+    :Toppings;
+
+    if (Oven has space?) then (yes)
+      fork
+        |Oven|
+        :Bake Pizza\n(15 min);
+      end fork
+    else (no)
+      |People|
+      :Wait for\noven space;
+    endif
+
+    |People|
+  repeat while (infinite pizza)
+
+end fork
+
+|Oven|
+note right: Up to 15 pizzas\nbake in parallel\n\nWith 3+ people making pizzas,\nthey will eventually wait for space
+
+@enduml

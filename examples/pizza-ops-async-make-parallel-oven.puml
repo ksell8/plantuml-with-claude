@@ -1,0 +1,24 @@
+@startuml pizza-ops-async-make-parallel-oven
+
+|Person 1|
+start
+
+repeat
+  :Dough;
+  :Sauce;
+  :Cheese;
+  :Toppings;
+  note right: 1 minute per pizza
+
+  fork
+    |Oven|
+    :Bake Pizza\n(15 min);
+  end fork
+
+  |Person 1|
+repeat while (infinite pizza)
+
+|Oven|
+note right: Up to 15 pizzas\nbake in parallel
+
+@enduml

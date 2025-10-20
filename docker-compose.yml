@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  plantuml-claude:
+    build: .
+    container_name: plantuml-claude
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: /bin/bash
