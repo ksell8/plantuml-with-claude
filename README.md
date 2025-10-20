@@ -6,13 +6,20 @@ Do you hate drag and drop tools that try to make it "easier"?
 
 Why don't you use AI to generate what you think with words?
 
-That is the purpose of this project.
+The purpose of this project is to get you to try doing just that.
 
-I setup a containerized version of claude code with plantUML installed as a demo prototype.  This isn't supposed to be more than that.  Set it up in your own local environment if you like it.
+I setup a containerized version of claude code with plantUML installed as a demo.  This isn't supposed to be more than that.  Set it up in your own local environment if you like it.
+
+# Prereqs
+
+- Install Docker 
+    [Linux](https://docs.docker.com/engine/install/)
+    [Mac/Windows](https://docs.docker.com/desktop/)
 
 # Start the Container
 
 `docker compose up -d`
+
 `docker exec -it plantuml-claude bash`
 
 # Prompt Claude
